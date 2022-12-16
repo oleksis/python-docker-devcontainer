@@ -5,7 +5,7 @@ WORKDIR /code
 
 # install dependencies
 COPY ./requirements.txt ./
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --disable-pip-version-check --no-cache-dir --upgrade -r requirements.txt
 
 # copy the src to the folder
 COPY ./src ./src
