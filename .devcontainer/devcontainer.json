@@ -39,7 +39,7 @@
 	// This can be used to network with other containers or the host.
 	"forwardPorts": [80, 5678],
 
-	"workspaceFolder": "/code",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
 	"shutdownAction": "stopCompose"
 

@@ -11,7 +11,7 @@ services:
     #   - 80:80
     #   - 5678:5678
     volumes:
-      - .:/code
+      - .:/workspaces:cached
     depends_on:
       - redis
 

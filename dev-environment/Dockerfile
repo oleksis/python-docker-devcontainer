@@ -1,7 +1,7 @@
 FROM python:3.10-slim
 
 # set the working directory
-WORKDIR /code
+WORKDIR /workspaces/dev-environment
 
 # install dependencies
 COPY ./requirements.txt ./
