@@ -1,7 +1,7 @@
 FROM python:3.10-slim
 
 # set the working directory
-WORKDIR /workspaces/dev-environment
+WORKDIR /workspaces/python-docker-devcontainer
 
 # install dependencies
 COPY ./requirements.txt ./

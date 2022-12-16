@@ -9,11 +9,12 @@ services:
     # (Adding the "ports" property to this file will not forward from a Codespace.)
     # ports:
     #   - 80:80
-    #   - 5678:5678
     volumes:
-      - .:/workspaces:cached
+      - .:/workspaces/python-docker-devcontainer:cached
     depends_on:
       - redis
 
   redis:
     image: redis:alpine
+    # ports:
+    #   - 5678:5678
