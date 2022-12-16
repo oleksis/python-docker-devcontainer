@@ -1,11 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/main/containers/python-3
+// Docker Compose : https://code.visualstudio.com/docs/devcontainers/create-dev-container#_use-docker-compose
+
 {
-	"name": "Python 3 Server",
-	"build": {
-		"dockerfile": "../dev-environment/Dockerfile",
-		"context": "../dev-environment"
-	},
+	"name": "Python 3 & Redis",
+	"dockerComposeFile": "../dev-environment/docker-compose.yml",
+	"service": "app",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -36,10 +36,12 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [80],
+	// This can be used to network with other containers or the host.
+	"forwardPorts": [80, 5678],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "uvicorn dev-environment.src.main:app --host 0.0.0.0 --port 80 --reload"
+	"workspaceFolder": "/code",
+
+	"shutdownAction": "stopCompose"
 
 	// "features": {
 	// 	"azure-cli": "latest"
